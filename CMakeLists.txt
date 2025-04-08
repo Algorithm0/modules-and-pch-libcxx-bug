@@ -7,6 +7,7 @@ project(clang_bug)
 enable_language(CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 set(BASE_NAME ${PROJECT_NAME})
 set(APP_NAME ${BASE_NAME}_app)
