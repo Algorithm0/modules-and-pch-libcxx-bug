@@ -30,7 +30,7 @@ This repository demonstrates a potential issue when using C++ modules and precom
 ```bash
 COMPILER_CONFIG="-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_CXX_COMPILER_CLANG_SCAN_DEP=clang-scan-deps"
 ```
-**clang 21.0.0 (git)**
+**clang 21.0.0 (git [148111fdcf0e807fe74274b18fcf65c4cff45d63](https://github.com/llvm/llvm-project/commit/148111fdcf0e807fe74274b18fcf65c4cff45d63))**
 ```bash
 COMPILER_CONFIG="-DCMAKE_C_COMPILER=${LLVM_21}/bin/clang -DCMAKE_CXX_COMPILER=${LLVM_21}/bin/clang++ -DCMAKE_CXX_COMPILER_CLANG_SCAN_DEP=${LLVM_21}/bin/clang-scan-deps"
 ```
@@ -42,12 +42,12 @@ COMPILER_CONFIG="-DCMAKE_C_COMPILER=${LLVM_21}/bin/clang -DCMAKE_CXX_COMPILER=${
 STDLIB_CONFIG=""
 ```
 
-**libc++ 19.1.7 (Fedora)**
+**libc++ 19.1.7 (Fedora 19.1.7-1.fc41)**
 ```bash
 STDLIB_CONFIG="-DCMAKE_EXE_LINKER_FLAGS_INIT='-stdlib=libc++' -DCMAKE_CXX_FLAGS='-stdlib++-isystem/usr/include/c++/v1'"
 ```
 
-**libc++ 21.0.0 (git)**
+**libc++ 21.0.0 (git [148111fdcf0e807fe74274b18fcf65c4cff45d63](https://github.com/llvm/llvm-project/commit/148111fdcf0e807fe74274b18fcf65c4cff45d63))**
 ```bash
 STDLIB_CONFIG="-DCMAKE_EXE_LINKER_FLAGS_INIT='-stdlib=libc++' \
                -DCMAKE_CXX_FLAGS='-stdlib++-isystem${LLVM_21}/include/c++/v1 -isystem${LLVM_21}/include/x86_64-unknown-linux-gnu/c++/v1' \
@@ -62,5 +62,4 @@ ninja -C build -v
 ```
 
 ## Additional Observations
-The build succeeds in all configurations when precompiled headers are disabled (`-DUSE_PCH=OFF`).\
-Commit for LLVM 21 - [148111fdcf0e807fe74274b18fcf65c4cff45d63](https://github.com/llvm/llvm-project/commit/148111fdcf0e807fe74274b18fcf65c4cff45d63)
+The build succeeds in all configurations when precompiled headers are disabled (`-DUSE_PCH=OFF`).
