@@ -62,4 +62,5 @@ ninja -C build -v
 ```
 
 ## Additional Observations
-The build succeeds in all configurations when precompiled headers are disabled (`-DUSE_PCH=OFF`).
+The build succeeds in all configurations when precompiled headers are disabled (`-DUSE_PCH=OFF`).\
+The corresponding [issue](https://github.com/llvm/llvm-project/issues/134855) is open in the [LLVM repository](https://github.com/llvm/llvm-project/).
